@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2BbsKBI<KEY>" crossorigin="anonymous">
+  <style>
+    body {
+    background-color: white;
+    display: block;
+    margin: 8px;
+  }
+  .top-nav {
+    background:whitesmoke;
+    text-align: right;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+  }
+
+  .top-nav a {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .top-nav a:hover {
+    transform: scale(1.1);
+  }
+
+  .main-nav {
+    background: whitesmoke;
+    text-align: center;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+    top: 40px;
+    z-index: 1000;
+  }
+  .nav
+      {
+          background: whitesmoke;
+          text-align: center;
+          padding: 19px;
+          position: fixed;
+          width: 100%;
+          z-index: 1000;
+          top: 0;
+          display: flex;
+          align-items: center;
+      }
+      .nav a
+      {
+          display: inline-block;
+          padding: 20px 20px;
+          text-decoration: none;
+          color: black;
+          transition: transform 0.3s ease-in-out;
+      }
+      .nav a:hover
+      {
+          transform: scale(1.1);
+      }
+      .nav div {
+          display: inline-block;
+          padding: 20px 20px;
+          text-decoration: none;
+      }
+      .top
+      {
+          color: white;
+          margin-left: 450px;
+      }
+      .brand-logo 
+      {
+          max-height: 40px;
+          margin-left: 10px;
+      }
+      .brand-logo:hover
+      {
+          transform: scale(1.2);
+      }
+
+      footer 
+      {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+      }
+      .footer-content {
+        display: flex;
+        letter-spacing: 20px;
+        justify-content: end;
+        text-align: right;
+      }
+      .footer-content :hover
+      {
+         color:antiquewhite;
+      }
+      .social-icons a {
+        color: red;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .company-details p {
+        margin: 5px 0;
+      }
+    section 
+    {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    ul 
+    {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold; 
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    footer 
+      {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+      }
+      .footer-content {
+        display: flex;
+        letter-spacing: 20px;
+        justify-content: end;
+        text-align: right;
+      }
+      .footer-content :hover
+      {
+         color:antiquewhite;
+      }
+  </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="helpcenter.html">Help Center</a><a>|</a>
+        <a href="contactus.html">Contact Us</a><a>|</a>
+        <a href="member.html">Join Us</a><a>|</a>
+        <a href="login.html">Log-in</a>
+         >  </div>
+      <nav class="nav">
+        <a href="base.html"><img src="C:\Users\dhruv\OneDrive\Desktop\shoe pics\nike.png" alt="Brand Logo" class="brand-logo"></a>
+        <div class="top">
+    
+          <a href="base.html">Home</a>
+          <a href="nike.html">Nike</a>
+          <a href="jordan.html">Jordan</a>
+        </div>
+
+      </nav>
+    <br<br><br><br><br><br><br><br><br><br><br><br>
+
+  <div ng-app="myApp" ng-controller="namesCtrl">
+    <main>
+      <section>
+        <h2>Delivery Answers</h2>
+        <p><input type="text" ng-model="test" placeholder="Search Your Question Here!"></p>
+        <ul>
+          <li ng-repeat="x in names | filter:test">
+            {{ x }}
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <hr>
+
+  <footer>
+    <div class="footer-content">
+      <a href=""><i class="fab fa-instagram"></i></a>
+      <a href=""><i class="fab fa-facebook"></i></a>
+      <a href=""><i class="fab fa-twitter"></i></a>
+      <a href=""><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="company-details">
+      <p><strong>Sneak Head's</strong></p>
+      <p>Address: 123 Oak Street, NYC, US</p>
+      <p>Phone: +61 81000-00001 , +91 80001-00001</p> 
+    </div>
+    <div class="info"><Br><br>
+      <p>India     &copy; 2024, Inc. All rights reserved </p>
+    </div>
+  </footer>
+  <script>
+    angular.module('myApp', []).controller('namesCtrl', function($scope) {
+      $scope.names = [
+        "Delivery Depends Upon the Location to be Delivered",
+        "Maximum Delivery Will be done in 7 Working Days after Dispatch",
+        "Order delivery time: 1 month(approx) can vary according to the order size",
+        "Payment Policy: 80% Advance payment",
+        "Delivery Charges: Only applicable when asked for location delivey",
+        "Packaging Charges: Basic Packaging will be given. extra packaging will be charged"
+      ];
+    });
+  </script>
+</body>
+</html>
